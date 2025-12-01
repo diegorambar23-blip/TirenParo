@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Visita Guadalajara sin Tráfico — Guía para Turistas</title>
+  <meta name="description" content="Consejos y herramientas para turistas que visitan Guadalajara y quieren reducir su impacto en el tráfico urbano." />
+  <style>
+    :root{
+      --accent:#0b7a5f;
+      --muted:#666;
+      --bg:#f7f8fa;
+      --card:#ffffff;
+      --radius:12px;
+      --gap:16px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, #f7f8fa 0%, #ffffff 100%);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    header{
+      background:var(--card);
+      position:sticky;
+      top:0;
+      z-index:20;
+      box-shadow:0 2px 8px rgba(12,12,12,0.06);
+      padding:12px 18px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#2da77b);
+      display:grid;place-items:center;color:white;font-weight:700;font-size:18px;
+    }
+    nav{margin-left:auto}
+    nav a{margin-left:14px;color:var(--muted);text-decoration:none;font-weight:600}
+    .container{max-width:1100px;margin:22px auto;padding:0 18px}
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:var(--gap);
+      align-items:start;
+    }
+    @media (max-width:920px){
+      .grid{grid-template-columns:1fr}
+    }
+    .hero{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 6px 20px rgba(12,12,12,0.05);
+    }
+    h1{margin:0 0 8px;font-size:24px}
+    p.lead{margin:0;color:var(--muted)}
+    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 20px rgba(12,12,12,0.04)}
+    .tips{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+    @media (max-width:640px){.tips{grid-template-columns:1fr}}
+    .tip{padding:12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#fbfffb);border:1px solid rgba(10,10,10,0.03)}
+    .tip h4{margin:0 0 6px;font-size:15px}
+    .tip p{margin:0;color:var(--muted);font-size:13px}
+    .small{font-size:13px;color:var(--muted)}
+    .cta{display:inline-block;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;margin-top:10px}
+    .sidebar .card + .card{margin-top:12px}
+    form .row{display:flex;gap:8px}
+    form label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+    input, select, textarea, button{
+      width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px;
+    }
+    button{background:var(--accent);color:white;border:none;cursor:pointer}
+    .result{margin-top:12px;padding:12px;border-radius:10px;background:#fcfffb;border:1px solid rgba(45,167,123,0.12)}
+    footer{margin:40px 0 80px;text-align:center;color:var(--muted);font-size:13px}
+    ul{padding-left:18px;margin:0}
+    .badge{display:inline-block;padding:6px 8px;border-radius:8px;background:#eef8f4;color:var(--accent);font-weight:700;font-size:13px}
+    .impact-high{color:#b22; font-weight:700}
+    .impact-medium{color:#e07b00; font-weight:700}
+    .impact-low{color:#0b7a5f; font-weight:700}
+    .map-placeholder{
+      height:180px;border-radius:8px;background:linear-gradient(90deg,#eef6f4,#ffffff);display:grid;place-items:center;color:var(--muted);
+      border:1px dashed rgba(10,10,10,0.04);
+    }
+    .faq{margin-top:10px}
+    .faq details{margin-bottom:8px}
+    .small-note{font-size:12px;color:#666;margin-top:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">GDL</div>
+      <div>
+        <div style="font-weight:800">Visita GDL sin Tráfico</div>
+        <div style="font-size:12px;color:var(--muted)">Consejos prácticos para turistas responsables</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#tips">Consejos</a>
+      <a href="#plan">Planificador</a>
+      <a href="#recursos">Recursos</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <section>
+        <div class="hero card" role="region" aria-labelledby="hero-title">
+          <h1 id="hero-title">Ayuda a reducir el tráfico en Guadalajara</h1>
+          <p class="lead">Pequeñas decisiones de movilidad por parte de turistas pueden mejorar mucho el día a día en la ciudad. Aquí tienes tips, un planificador y estimaciones para elegir opciones responsables.</p>
+          <div style="margin-top:12px">
+            <span class="badge">Guadalajara</span>
+            <span style="margin-left:8px" class="small">Idiomas: español / inglés</span>
+          </div>
+
+          <div id="tips" class="tips" aria-label="Consejos rápidos">
+            <div class="tip">
+              <h4>Usa transporte público</h4>
+              <p>El sistema público (tren ligero, Macrobús y rutas de bus) reduce coches en las calles. Planea trayectos combinando.</p>
+            </div>
+            <div class="tip">
+              <h4>Camina o usa bici</h4>
+              <p>Muchas atracciones del centro se visitan a pie o en bicicleta. Usa bici pública si está disponible.</p>
+            </div>
+            <div class="tip">
+              <h4>Evita horas pico</h4>
+              <p>Si puedes, evita moverte entre 7:00–9:30 y 17:30–20:00. Planifica tours en la mañana tardía o la tarde noche.</p>
+            </div>
+            <div class="tip">
+              <h4>Compartir viajes</h4>
+              <p>Opta por transporte compartido o transbordadores cuando el grupo sea pequeño; así reduces coches extra.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+            <a class="cta" href="#plan">Planificar mi viaje</a>
+            <a class="cta" style="background:#3a7bd5" href="#recursos">Ver recursos</a>
+          </div>
+
+        </div>
+
+        <div style="margin-top:16px" class="card">
+          <h3 style="margin-top:0">Calculadora rápida de impacto</h3>
+          <p class="small">Selecciona tu opción de transporte para estimar el "impacto de tráfico" relativo.</p>
+
+          <div style="display:grid;gap:8px;margin-top:10px">
+            <label for="mode">Medio de transporte</label>
+            <select id="mode" aria-label="Selecciona el modo de transporte">
+              <option value="car">Auto privado</option>
+              <option value="taxi">Taxi / App de viaje</option>
+              <option value="rideshare">Ride-share compartido</option>
+              <option value="bus">Autobús / Macrobús</option>
+              <option value="train">Tren ligero / Sistema urbano</option>
+              <option value="bike">Bicicleta</option>
+              <option value="walk">A pie</option>
+            </select>
+
+            <label for="distance">Distancia aproximada (km)</label>
+            <input id="distance" type="number" min="0" value="3" aria-label="Distancia aproximada en kilómetros"/>
+
+            <button id="calcBtn" type="button">Calcular impacto</button>
+
+            <div id="impactResult" class="result" role="status" aria-live="polite" style="display:none"></div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px" class="card" id="recursos">
+          <h3 style="margin-top:0">Recursos locales útiles</h3>
+          <ul>
+            <li><strong>Tren Ligero / SITEUR</strong> — ideal para moverse rápido por corredores centrales.</li>
+            <li><strong>Macrobús y RTP</strong> — conecta zonas con alta demanda sin usar coche particular.</li>
+            <li><strong>Bicicletas públicas</strong> — revisa estaciones cerca del centro histórico.</li>
+            <li><strong>Apps de movilidad</strong> — compara tiempos y costos; elige opciones compartidas cuando sea posible.</li>
+          </ul>
+          <p class="small-note">Nota: horarios y disponibilidad cambian — confirma en estaciones y apps locales.</p>
+        </div>
+
+      </section>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h3 style="margin-top:0">Planificador de viaje (orientativo)</h3>
+          <form id="planForm" aria-label="Formulario planificador">
+            <div style="margin-bottom:8px">
+              <label for="origin">Origen (ej. Centro Histórico)</label>
+              <input id="origin" placeholder="Dirección o punto" required>
+            </div>
+            <div style="margin-bottom:8px">
+              <label for="destination">Destino (ej. Hospicio Cabañas)</label>
+              <input id="destination" placeholder="Dirección o punto" required>
+            </div>
+
+            <div style="display:flex;gap:8px;margin-bottom:8px">
+              <div style="flex:1">
+                <label for="when">Hora estimada</label>
+                <input id="when" type="time" value="10:00">
+              </div>
+              <div style="flex:1">
+                <label for="party">Personas</label>
+                <input id="party" type="number" min="1" value="1">
+              </div>
+            </div>
+
+            <div style="margin-bottom:8px">
+              <label for="pref">Preferencia</label>
+              <select id="pref">
+                <option value="lowtraffic">Minimizar tráfico</option>
+                <option value="fastest">Más rápido</option>
+                <option value="cheapest">Más barato</option>
+              </select>
+            </div>
+
+            <button type="submit">Sugerir opción</button>
+          </form>
+
+          <div id="planResult" class="result" style="display:none" aria-live="polite"></div>
+
+          <div style="margin-top:12px">
+            <h4 style="margin:0 0 8px 0">Mapa (placeholder)</h4>
+            <div class="map-placeholder">Aquí podrías integrar un mapa</div>
+            <div class="small-note">Si quieres, puedo ayudarte a integrar Google Maps o una alternativa de código abierto.</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin:0 0 8px 0">Preguntas frecuentes</h4>
+          <div class="faq">
+            <details><summary>¿Qué horas evito para moverme?</summary><p class="small">Evita 7:00–9:30 y 17:30–20:00 en avenidas principales.</p></details>
+            <details><summary>¿Hay ciclovías seguras?</summary><p class="small">Sí, especialmente en el centro y algunas avenidas. Revisa rutas locales.</p></details>
+            <details><summary>¿Cómo reporto congestión?</summary><p class="small">Algunas apps locales permiten reportes; también puedes usar apps de tráfico globales.</p></details>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div>Hecho con ❤ para visitantes responsables — Guadalajara</div>
+      <div style="margin-top:6px">Guarda este archivo y ábrelo en tu navegador. ¿Quieres que exporte esto como plantilla lista para alojar? Puedo ayudar.</div>
+    </footer>
+  </main>
+
+  <script>
+    // Calculadora de impacto (muy simple / orientativa)
+    const calcBtn = document.getElementById('calcBtn');
+    const impactResult = document.getElementById('impactResult');
+
+    const impactScores = {
+      car: {scorePerKm: 0.9, label:'Alto', cls:'impact-high', advice:'Evita usar auto privado; considera transporte público o bici.'},
+      taxi: {scorePerKm: 0.6, label:'Medio', cls:'impact-medium', advice:'Comparte viaje o usa taxi solo si es necesario.'},
+      rideshare: {scorePerKm: 0.35, label:'Medio', cls:'impact-medium', advice:'Ride-share reduce coches por persona; prioriza compartir.'},
+      bus: {scorePerKm: 0.2, label:'Bajo', cls:'impact-low', advice:'Excelente opción para reducir tráfico.'},
+      train: {scorePerKm: 0.15, label:'Bajo', cls:'impact-low', advice:'Tren ligero suele ser rápido y de bajo impacto.'},
+      bike: {scorePerKm: 0.02, label:'Muy bajo', cls:'impact-low', advice:'Perfecto para distancias cortas.'},
+      walk: {scorePerKm: 0.0, label:'Nulo', cls:'impact-low', advice:'Caminar no añade tráfico y es saludable.'}
+    };
+
+    function formatKm(km){
+      return Number(km).toLocaleString(undefined, {maximumFractionDigits:1});
+    }
+
+    calcBtn.addEventListener('click', ()=> {
+      const mode = document.getElementById('mode').value;
+      const dist = parseFloat(document.getElementById('distance').value) || 0;
+      const info = impactScores[mode];
+      const impact = info.scorePerKm * dist;
+      impactResult.style.display = 'block';
+      impactResult.innerHTML = `
+        <div style="font-weight:800">Tu elección: ${mode.toUpperCase()}</div>
+        <div style="margin-top:8px">Distancia: <strong>${formatKm(dist)} km</strong></div>
+        <div style="margin-top:6px">Estimación relativa de impacto: <span class="${info.cls}">${info.label}</span></div>
+        <div style="margin-top:8px;color:#333">${info.advice}</div>
+        <div style="margin-top:8px;font-size:13px;color:#666">Puntuación orientativa: <strong>${impact.toFixed(2)}</strong> (más bajo = mejor)</div>
+      `;
+    });
+
+    // Planificador (simple heurística)
+    const planForm = document.getElementById('planForm');
+    const planResult = document.getElementById('planResult');
+
+    planForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const origin = document.getElementById('origin').value.trim();
+      const dest = document.getElementById('destination').value.trim();
+      const when = document.getElementById('when').value;
+      const party = parseInt(document.getElementById('party').value) || 1;
+      const pref = document.getElementById('pref').value;
+
+      if(!origin || !dest){
+        planResult.style.display='block';
+        planResult.innerHTML = '<strong style="color:#b22">Por favor indica origen y destino.</strong>';
+        return;
+      }
+
+      // Heurística: si distancia corta -> bici/andar. Si many people -> rideshare or bus.
+      // Sin geolocalización real, se usa reglas por defecto.
+      let suggestion = '';
+      let rationale = '';
+      if(pref === 'lowtraffic'){
+        if(party === 1){
+          suggestion = 'Transporte público (tren o bus) o bicicleta si la distancia es corta.';
+          rationale = 'Minimiza vehículos particulares y espacio en la vía.';
+        } else {
+          suggestion = 'Compartir un solo vehículo (rideshare) o usar transporte público en grupo.';
+          rationale = 'Reducir el número de vehículos por grupo.';
+        }
+      } else if(pref === 'fastest'){
+        suggestion = 'Taxi / App de viaje para conexión directa.';
+        rationale = 'Es la opción más directa aunque puede generar más tráfico relativo.';
+      } else {
+        suggestion = 'Bus / Transporte público o compartir taxi para reducir costos.';
+        rationale = 'Balance entre costo y eficiencia.';
+      }
+
+      planResult.style.display='block';
+      planResult.innerHTML = `
+        <div style="font-weight:800">Sugerencia:</div>
+        <div style="margin-top:8px">${suggestion}</div>
+        <div style="margin-top:8px;color:#666">${rationale}</div>
+        <div style="margin-top:10px;font-size:13px;color:#666">Hora seleccionada: <strong>${when || '—'}</strong> · Personas: <strong>${party}</strong></div>
+      `;
+    });
+
+    // Accessibility: allow Enter key to trigger calculator from distance input
+    document.getElementById('distance').addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter') calcBtn.click();
+    });
+
+  </script>
+</body>
+</html>
